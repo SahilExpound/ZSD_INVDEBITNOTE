@@ -1,0 +1,67 @@
+@Metadata.layer: #CORE
+@UI:{
+    headerInfo:{
+    typeName: 'Invoice debit note',
+    typeNamePlural: 'Invoice debit note' },
+        presentationVariant: [{ sortOrder: [{ by: 'BillingDocument', direction: #DESC }] }]
+    }
+
+annotate entity ZC_INVDEBITNOTE with
+{
+
+  @UI.facet: [
+
+    {
+      id : 'Header',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Invoice debit note',
+      position: 10
+   }
+
+  ]
+
+  @UI: { lineItem:[{ position: 10 }, { type: #FOR_ACTION , dataAction: 'ZPRINT', label: 'Generate Print'}],
+  identification: [{ position: 10 }],
+  selectionField: [{ position: 10 }] }
+  BillingDocument;
+  @UI: { lineItem:[{ position: 20 }],
+  identification: [{ position: 20 }],
+  selectionField: [{ position: 20 }] }
+  BillingDocumentDate;
+  @UI: { lineItem:[{ position: 30 }],
+  identification: [{ position: 30 }],
+  selectionField: [{ position: 30 }] }
+  BillingDocumentType;
+  @UI: { lineItem:[{ position: 40 }],
+  identification: [{ position: 40 }],
+  selectionField: [{ position: 40 }] }
+  CompanyCode;
+  @UI: { lineItem:[{ position: 50 }],
+  identification: [{ position: 50 }],
+  selectionField: [{ position: 50 }] }
+  FiscalYear;
+  @UI: { lineItem:[{ position: 60 }],
+  identification: [{ position: 60 }],
+  selectionField: [{ position: 60 }] }
+  SalesOrganization;
+  @UI: { lineItem:[{ position: 70 }],
+  identification: [{ position: 70 }],
+  selectionField: [{ position: 70 }] }
+  Division;
+  @UI: { lineItem:[{ position: 80 }],
+  identification: [{ position: 80 }],
+  selectionField: [{ position: 80 }] }
+  DistributionChannel;
+  @UI: { lineItem:[{ position: 90 }],
+  identification: [{ position: 90 }],
+  selectionField: [{ position: 90 }] }
+  SoldToParty;
+  @UI: { lineItem:[{ position: 110 }],
+  identification: [{ position: 110 }],
+  selectionField: [{ position: 110 }] }
+  CustomerName;
+
+  @UI.hidden: true
+  base64;
+}

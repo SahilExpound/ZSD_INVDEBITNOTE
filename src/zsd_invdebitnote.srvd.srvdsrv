@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD FOR INVOICE DEBIT NOTE'
+define service ZSD_INVDEBITNOTE {
+  expose ZC_INVDEBITNOTE;
+}

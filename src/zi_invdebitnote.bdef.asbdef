@@ -1,0 +1,24 @@
+managed implementation in class zbp_i_invdebitnote unique;
+strict ( 2 );
+
+define behavior for ZI_INVdebitnote alias ZI_INVDEBIT
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly ) BillingDocument;
+
+  create;
+  update;
+  delete;
+
+  action ( features : instance ) ZPRINT result [1] $self;
+  mapping for zdb_invdebitnote
+    {
+      BillingDocument = invno;
+      base64          = base64;
+    }
+
+}
